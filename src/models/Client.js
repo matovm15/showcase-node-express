@@ -1,38 +1,40 @@
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
-// const ClientSchema = mongoose.Schema({
-//   name: [
-//     {
-//       first: {
-//         type: String,
-//         required: true,
-//       },
-//       last: {
-//         type: String,
-//         required: true,
-//       },
-//     },
-//   ],
-//   email: {
-//     type: String,
-//     required: true,
-//   },
-//   phone_number: {
-//     type: String,
-//   },
-//   email_is_verified: {
-//     type: Boolean,
-//     default: false,
-//   },
-//   password: {
-//     type: String,
-//     required: true,
-//   },
+const { Schema } = mongoose;
 
-//   created_at: {
-//     type: Date,
-//     default: new Date(),
-//   },
-// });
+const ClientSchema = new Schema({
+  name: [
+    {
+      first: {
+        type: String,
+        required: true,
+      },
+      last: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
+  email: {
+    type: String,
+    required: true,
+  },
+  phone_number: {
+    type: String,
+  },
+  email_is_verified: {
+    type: Boolean,
+    default: false,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 
-// export default Client = mongoose.model('client', ClientSchema);
+  created_at: {
+    type: Date,
+    default: new Date(),
+  },
+});
+
+export default mongoose.model('client', ClientSchema);
